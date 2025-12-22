@@ -5,20 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carros Bolados</title>
 </head>
-<body>
-    <h1>
-        Aqui só tem carro boladão
-    </h1>
 
-    <li>
-        <ul>
-            <ol>
-                Camaro
-            </ol>
-            <ol>
-                Ford
-            </ol>
-        </ul>
-    </li>
-</body>
+{% block content %}
+    <body>
+        <h1>
+            Aqui só tem carro boladão
+        </h1>
+
+        <li>
+            <ul>
+                <ol>
+                    Modelo: {{cars.model}}
+                </ol>
+                <ol>
+                    Ano: {{cars.ano}}
+                </ol>
+            </ul>
+        </li>
+    </body>
+
+{% endblock %}
+
 </html>
