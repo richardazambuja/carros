@@ -9,19 +9,13 @@
 {% block content %}
     <body>
         <h1>
-            Aqui só tem carro boladão
+            Carros disponíveis em estoque:
         </h1>
 
-        <li>
-            <ul>
-                <ol>
-                    Modelo: {{cars.model}}
-                </ol>
-                <ol>
-                    Ano: {{cars.ano}}
-                </ol>
-            </ul>
-        </li>
+        {%for car in cars%}
+        <h3> {{ car.model }} - {{ car.brand }} - {{ car.model_year }}</h3>
+        {%endfor%}
+        
     </body>
 
 {% endblock %}
