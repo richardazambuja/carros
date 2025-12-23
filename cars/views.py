@@ -4,7 +4,7 @@ from cars.models import Car
 # Create your views here.
 def car_view(request):
     
-    cars = Car.objects.all()
+    cars = Car.objects.filter(model__contains='Uno')
     
 
     return render (
