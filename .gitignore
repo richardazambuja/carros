@@ -4,3 +4,5 @@ db.sqlite3
 env/
 __pycache__/
 media/
+__pycache__/
+*.pyc

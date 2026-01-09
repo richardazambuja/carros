@@ -17,6 +17,7 @@ def register_view(request):
 
 def login_view(request):
     if request.method == 'POST':
+        login_form = AuthenticationForm
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
@@ -25,9 +26,10 @@ def login_view(request):
             return redirect('cars_list')
         else:
             login_form = AuthenticationForm()
+    
     else:
         login_form = AuthenticationForm()
-    return render(request, 'login.html', {'login_form' : login_form})
+    return render(request, 'login.html', {'login_form':login_form})
 
 
 def logout_view(request):
