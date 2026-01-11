@@ -36,8 +36,10 @@ class CarModelForm(forms.ModelForm):
         value = self.cleaned_data.get('value')
         if value < 25000:
             self.add_error('value', 'Valor do carro deve ser de pelo menos R$25.000,00')
+        return value
 
     def clean_factory_year(self):
         factory_year = self.cleaned_data.get('factory_year')
         if factory_year < 2015:
             self.add_error('factory_year', 'Nosso sistema só aceita carros fabricados a partir de 2015')
+        return factory_year
