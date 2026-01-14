@@ -3,6 +3,7 @@ from cars.models import Car
 from cars.forms import CarForm, CarModelForm
 from django.views import View
 from django.views.generic import ListView, CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 ##FunctionBasedView
 """def car_view(request):
@@ -58,11 +59,16 @@ class CarListView(ListView):
 """
 
 
-class NewCarCreateView(CreateView):
-    model = Car
-    form_class = CarModelForm
-    template_name = 'new_car.html'
-    success_url = '/cars/'
+class NewCarCreateView(LoginRequiredMixin, CreateView):
+        model = Car
+        form_class = CarModelForm
+        template_name = 'new_car.html'
+        success_url = '/cars/'
+
+        def dispatch(self, request):
+            if not request.user.is_authenticated:
+                return redirect('/login/')
+            return super().dispatch(request)
 
 class SucessView(View):
     def get(self, request):
