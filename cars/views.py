@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from cars.models import Car
 from cars.forms import CarForm, CarModelForm
 from django.views import View
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 ##FunctionBasedView
@@ -63,14 +63,18 @@ class NewCarCreateView(LoginRequiredMixin, CreateView):
         model = Car
         form_class = CarModelForm
         template_name = 'new_car.html'
-        success_url = '/cars/'
+        success_url = '/sucess/'
 
         def dispatch(self, request):
             if not request.user.is_authenticated:
                 return redirect('/login/')
             return super().dispatch(request)
 
-class SucessView(View):
+class SuccessView(View):
     def get(self, request):
         user = request.user 
-        return render(request, 'sucess.html', )
+        return render(request, 'sucess.html', {'user':user})
+    
+class CarDetailView(DetailView):
+     model = Car
+     template_name = 'car_detail.html'

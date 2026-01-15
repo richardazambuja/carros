@@ -3,8 +3,10 @@
 <div>
     <h2>
         Seu carro foi cadastrado com sucesso, {{ user.username }}!!
+        <a href="{% url 'cars_list' %}" class="btn">Ir para carros</a>
     </h2>
 </div>
+
 
 
 {% endblock %}
