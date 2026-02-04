@@ -16,12 +16,6 @@ def car_inventory_update():
     )
 
 
-@receiver(pre_save, sender=Car)
-def car_pre_save(sender, instance, **kwargs):
-    if not instance.bio:
-        instance.bio = 'Descrição gerada automáticamente'
-
-
 @receiver(post_save, sender=Car)
 def car_post_save(sender, instance, **kwargs):
     car_inventory_update()
