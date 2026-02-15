@@ -1,112 +1,131 @@
-🚗 CarStock – Sistema de Gerenciamento de Estoque de Veículos
+# 🚗 CarStock – Sistema de Gerenciamento de Estoque de Veículos
 
-Sistema web completo para gerenciamento de estoque de veículos, com controle de inventário, métricas financeiras e hierarquia de usuários.
-
-📌 Sobre o Projeto
-
-O CarStock é um sistema desenvolvido para concessionárias e lojas de veículos que precisam:
-
-Controlar o estoque de carros
-
-Gerenciar entrada e saída de veículos
-
-Acompanhar histórico mensal
-
-Visualizar métricas financeiras
-
-Controlar permissões por hierarquia
-
-O sistema foi desenvolvido com foco em organização, segurança e escalabilidade, utilizando arquitetura baseada em camadas e deploy em servidor Linux com Nginx e uWSGI.
-
-Sessão 'Lista de Carros':
-<img width="1486" height="725" alt="Captura de tela de 2026-02-15 17-33-58" src="https://github.com/user-attachments/assets/74eec2b7-0b87-45c6-b21a-6717419fb922" />
-
-Sessão 'Detalhes do Carro':
-<img width="1463" height="1135" alt="Captura de tela de 2026-02-15 17-34-42" src="https://github.com/user-attachments/assets/de4c5fc5-cc84-4888-8e6b-b3d5c3a1cbf2" />
-
-Sessão 'Cadastrar um Carro'
-<img width="1479" height="1128" alt="Captura de tela de 2026-02-15 17-34-22" src="https://github.com/user-attachments/assets/725dc175-f830-4fe9-993f-8f9b0cf2ff88" />
-
-Sessão 'Editar um Carro':
-<img width="1457" height="1205" alt="Captura de tela de 2026-02-15 17-34-55" src="https://github.com/user-attachments/assets/269bf51d-1989-4f51-adcf-eb6266b2f3ae" />
-
-Sessão 'Confirmação de Deleção um Carro':
-<img width="1457" height="1205" alt="Captura de tela de 2026-02-15 17-45-32" src="https://github.com/user-attachments/assets/45b8fbf8-e7d8-42ae-a956-2879f6a1fc4f" />
+O **CarStock** é um sistema web robusto e intuitivo, desenvolvido para atender às necessidades de concessionárias e lojas de veículos. Ele oferece uma solução abrangente para a gestão de inventário, controle de entrada/saída, métricas financeiras e um sistema de permissões baseado em hierarquia.
 
 
-🛠️ Tecnologias Utilizadas
 
-Backend: Python + Django
+## 📌 Sobre o Projeto
 
-Banco de Dados: PostgreSQL / SQLite (ambiente de desenvolvimento)
+Focado em organização, segurança e escalabilidade, o CarStock emprega uma arquitetura baseada em camadas e é otimizado para deploy em servidores **Linux**. Utiliza **Nginx** como servidor web e **uWSGI** como servidor de aplicação, garantindo alta performance e confiabilidade em ambiente de produção.
 
-Frontend: HTML, CSS (Django Templates)
+---
 
-Servidor: Nginx
+### Sessão "Lista de Carros":
+<img width="1486" height="725" alt="Captura de tela de 2026-02-15 17-33-58" src="https://github.com/user-attachments/assets/c7ce2eaf-6372-4cd9-ad07-dde022d6105f" />
 
-Application Server: uWSGI
 
-Deploy: VPS Linux (AWS EC2)
 
-Versionamento: Git + GitHub
+### Sessão "Cadastro de um Carro":
 
-🏗️ Arquitetura do Sistema
+<img width="1457" height="1205" alt="Captura de tela de 2026-02-15 17-50-33" src="https://github.com/user-attachments/assets/ce933e57-f4f4-4826-b435-cd9a8904d818" />
 
-O sistema foi estruturado seguindo boas práticas do Django:
 
-Separação de apps
 
-Uso de Models, Views e Templates
+### Sessão "Detalhes do Carro":
 
-Configuração adequada de static e media
+<img width="1463" height="1135" alt="Captura de tela de 2026-02-15 17-34-42" src="https://github.com/user-attachments/assets/14dec3be-4289-49b9-851b-47f85c1d4492" />
 
-Upload de imagens com ImageField
 
-Hierarquia de permissões baseada em autenticação Django
 
-🔐 Hierarquia de Usuários
-Tipo de Usuário	Permissões
-Administrador	Cadastro, edição, exclusão, acesso a métricas e relatórios
-Funcionário	Cadastro e edição de veículos
-🚘 Funcionalidades
-📦 Gestão de Estoque
+### Sessão "Edição de um Carro":
 
-Cadastro de veículos
+<img width="1457" height="1205" alt="Captura de tela de 2026-02-15 17-59-53" src="https://github.com/user-attachments/assets/56715151-38d1-4460-934b-d28dfea12117" />
 
-Upload de foto
 
-Preço de compra
 
-Preço de venda
+### Sessão "Confirmação Deleção de um Carro":
 
-Status do veículo (Disponível / Vendido)
+<img width="1457" height="1205" alt="Captura de tela de 2026-02-15 17-45-32" src="https://github.com/user-attachments/assets/afcfb7e2-9233-48ac-bfee-6af0b7862b71" />
 
-📊 Métricas e Relatórios (Admin)
 
-Total de carros em estoque
 
-Histórico mensal de vendas
+### Sessão "Criação de Conta":
 
-Valor total já movimentado
+<img width="1457" height="1205" alt="Captura de tela de 2026-02-15 18-04-30" src="https://github.com/user-attachments/assets/decf3b0d-a92d-4a17-9fd7-3db6379bf1cf" />
 
-Controle de giro financeiro
 
-🖼️ Sistema de Imagens
 
-Upload organizado em /media/cars/
+### Sessão "Login":
 
-Suporte a imagem padrão quando não há foto
+<img width="1457" height="1205" alt="Captura de tela de 2026-02-15 18-04-38" src="https://github.com/user-attachments/assets/f49fd694-5101-4b9e-90db-19a5c6c96315" />
 
-📈 Melhorias Futuras
 
-Dashboard com gráficos (Chart.js)
 
-API REST com Django Rest Framework
+## 🛠️ Tecnologias Utilizadas
 
-Exportação de relatórios em PDF
+| Categoria | Tecnologia(s) |
+| :--- | :--- |
+| **Backend** | Python, Django |
+| **Banco de Dados** | PostgreSQL (Produção), SQLite (Dev) |
+| **Frontend** | HTML5, CSS3 (Django Templates) |
+| **Servidor Web** | Nginx |
+| **Application Server** | uWSGI |
+| **Deploy** | VPS Linux (AWS EC2) |
+| **Versionamento** | Git, GitHub |
 
-Sistema multi-loja
+---
 
-Controle de comissão de vendedores
+## 🏗️ Arquitetura do Sistema
 
-Auditoria de alterações
+O projeto segue as melhores práticas de desenvolvimento com Django, promovendo modularidade e fácil manutenção:
+
+* **Separação de Apps:** Aplicações independentes para facilitar a escalabilidade.
+* **Padrão MVT:** Implementação do *Model-View-Template* para separação de responsabilidades.
+* **Gestão de Media:** Configuração otimizada para upload e armazenamento de imagens de veículos em `/media/cars/`.
+* **Hierarquia de Permissões:** Sistema de autenticação e autorização nativo do Django.
+
+
+
+---
+
+## 🔐 Hierarquia de Usuários
+
+| Tipo de Usuário | Permissões |
+| :--- | :--- |
+| **👑 Administrador** | Cadastro, edição, exclusão, acesso total a métricas e relatórios financeiros. |
+| **👤 Funcionário** | Cadastro e edição de veículos no estoque. |
+
+---
+
+## 🚘 Funcionalidades
+
+### 📦 Gestão de Estoque
+- **Cadastro Completo:** Registro de preço de compra, preço de venda e status (Disponível/Vendido).
+- **Upload de Fotos:** Suporte a imagens reais do veículo com sistema de *fallback* (imagem padrão).
+- **Fluxo de Entrada/Saída:** Controle rigoroso da movimentação do pátio.
+
+### 📊 Métricas e Relatórios (Exclusivo Admin)
+- **Inventário:** Visão geral da quantidade de carros em estoque.
+- **Histórico de Vendas:** Acompanhamento mensal do desempenho comercial.
+- **Volume Financeiro:** Monitoramento do valor total movimentado e giro de capital.
+
+---
+
+## 📈 Melhorias Futuras
+
+- [ ] **Dashboard Interativo:** Gráficos dinâmicos com **Chart.js**.
+- [ ] **API RESTful:** Integração externa via **Django Rest Framework**.
+- [ ] **Exportação de Relatórios:** Geração de documentos em **PDF**.
+- [ ] **Multi-Loja:** Gerenciamento de múltiplas filiais em uma única conta.
+- [ ] **Comissões:** Módulo para cálculo automático de comissão por vendedor.
+- [ ] **Auditoria (Logs):** Rastreabilidade total de alterações no sistema.
+
+---
+
+## 🚀 Como Executar o Projeto
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/seu-usuario/carstock.git](https://github.com/seu-usuario/carstock.git)
+    ```
+2.  **Crie um ambiente virtual e instale as dependências:**
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # Linux/Mac
+    pip install -r requirements.txt
+    ```
+3.  **Execute as migrações e inicie o servidor:**
+    ```bash
+    python manage.py migrate
+    python manage.py runserver
+    ```
