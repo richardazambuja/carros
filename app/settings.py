@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cars',
     'accounts',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
@@ -111,6 +112,12 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-br'
 
+USE_I18N=True
+USE_L10N=True
+
+DECIMAL_SEPARATOR=','
+THOUSAND_SEPARATOR='.'
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -121,8 +128,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+from pathlib import Path
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR / 'static'),
+]
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'

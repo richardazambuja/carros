@@ -1,4 +1,5 @@
 from django.db import models
+from decimal import Decimal
 
 class Brand(models.Model):
     id = models.AutoField(primary_key=True)
@@ -14,14 +15,23 @@ class Car(models.Model):
     factory_year = models.IntegerField()
     model_year = models.IntegerField(blank=True, null=True)
     plate = models.CharField(max_length=10, blank=True, null=True)
-    value = models.FloatField(blank=True, null=True)
+    value = models.DecimalField(
+        blank=True,
+        null=True,
+        max_digits=12,
+        decimal_places=2,
+        )
     photo = models.ImageField(upload_to='cars/', blank=True, null=True, default='cars/img-indisponivel.jpg')
     bio = models.TextField(blank=True, null=True)
+
+    def photo_url(self):
+        if self.photo and hasattr(self.photo, 'url'):
+            return self.photo.url
+        return '/media/cars/img-indisponivel.jpg'
 
     def __str__(self):
         return self.model
     
-
 class Car_inventory(models.Model):
     cars_count = models.IntegerField()
     cars_value = models.FloatField()

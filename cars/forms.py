@@ -1,36 +1,27 @@
 from django import forms
 from cars.models import Car, Brand
+from decimal import Decimal
 
 #Formulário antigo
-class CarForm(forms.Form):
-    model = forms.CharField(max_length=200)
-    brand = forms.ModelChoiceField(Brand.objects.all())
-    factory_year = forms.IntegerField()
-    model_year = forms.IntegerField()
-    plate = forms.CharField(max_length=10)
-    value = forms.FloatField()
-    photo = forms.ImageField()
-
-    def save(self):
-        car = Car(
-              model = self.cleaned_data['model'],
-              brand = self.cleaned_data['brand'],
-              factory_year = self.cleaned_data['factory_year'],
-              model_year = self.cleaned_data['model_year'],
-              plate = self.cleaned_data['plate'],
-              value = self.cleaned_data['value'],
-              photo = self.cleaned_data['photo'],
-        )
-
-        car.save()
-        return car
-
 
 #Formulário em uso
 class CarModelForm(forms.ModelForm):
+    
+    value = forms.CharField()    
+    
     class Meta:
         model = Car
         fields = '__all__'
+        labels = {
+            'model':'Modelo',
+            'brand':'Marca',
+            'factory_year':'Ano de Fabricação',
+            'model_year':'Ano do Modelo',
+            'plate':'Placa',
+            'value':'Valor de Venda',
+            'photo':'Foto',
+            'bio':'Descrição'
+        }
 
     def clean_value(self):
         value = self.cleaned_data.get('value')
@@ -44,4 +35,13 @@ class CarModelForm(forms.ModelForm):
             self.add_error('factory_year', 'Nosso sistema só aceita carros fabricados a partir de 2015')
         return factory_year
     
+    def clean_value(self):
+        value = self.data.get('value')
+
+        if value:
+            value = value.replace('.', '').replace(',', '.')
+            return Decimal(value)
+
+        return None
+
     

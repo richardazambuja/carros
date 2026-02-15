@@ -1,14 +1,28 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/new_car.css' %}">
+{% endblock %}
 
 {% block content %}
+<div class="login-container">
+    <div class="login-card edit-card">
+        <h2>Cadastrar Carro</h2>
+        
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <table class="form-table">
+                {{ form.as_table }}
+            </table>
 
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-
-        <table> {{ form.as_table }} </table>
-
-        <input type="submit" value="Cadastrar" class="btn-submit">
-
-    </form>
-
+            <div class="button-group">
+                <button type="submit" class="btn-save">Salvar Alterações</button>
+                <a href="{% url 'cars_list' %}" class="btn-cancel">Cancelar</a>
+                <a href="#" class="btn-delete">Deletar</a>
+            </div>
+        </form>
+    </div>
+</div>
 {% endblock %}

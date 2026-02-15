@@ -1,0 +1,100 @@
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4; 
+    padding: 20px;
+}
+
+
+.login-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1); 
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.login-card h2 {
+    color: #0096c7; 
+    font-family: 'Georgia', serif;
+    margin-bottom: 30px;
+}
+
+
+.form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e3e1e1;
+    border-radius: 8px;
+    box-sizing: border-box; 
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #0096c7;
+}
+
+
+.error-msg {
+    color: #d9534f;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #0096c7;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0077a1;
+}
+
+
+.login-footer {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #666;
+}
+
+.login-footer a {
+    color: #0096c7;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}

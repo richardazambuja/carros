@@ -1,0 +1,112 @@
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 160px); 
+    background-color: #f4f4f4; 
+    padding: 40px 20px;
+}
+
+/* O Card Branco */
+.edit-card {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 650px; 
+}
+
+.edit-card h2 {
+    text-align: center;
+    font-family: 'Georgia', serif;
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+
+.form-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.form-table th {
+    text-align: left;
+    padding: 12px 10px;
+    font-weight: bold;
+    color: #333;
+    width: 30%; 
+    vertical-align: middle;
+}
+
+.form-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee; 
+}
+
+
+.form-table input, 
+.form-table select, 
+.form-table textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fdfdfd;
+    box-sizing: border-box;
+}
+
+
+.form-table textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+
+.button-group button, 
+.button-group a {
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    transition: opacity 0.2s;
+}
+
+
+.btn-save {
+    background-color: #0099cc; 
+}
+
+.btn-cancel {
+    background-color: #00a8cc; 
+}
+
+.btn-delete {
+    background-color: #d9534f; 
+}
+
+.button-group button:hover, 
+.button-group a:hover {
+    opacity: 0.85;
+}
+
+
+.form-table input[type="file"] {
+    border: none;
+    background: transparent;
+    padding-left: 0;
+}

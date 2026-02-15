@@ -1,0 +1,101 @@
+
+.delete-card {
+    max-width: 450px;
+}
+
+.warning-text {
+    font-size: 18px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.warning-text strong {
+    color: #d9534f; 
+    font-size: 20px;
+}
+
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+    margin-top: 30px;
+}
+
+
+.btn-delete, .btn-cancel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    appearance: none;
+    border: none;
+    outline: none;
+    text-decoration: none; 
+    
+ 
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: white !important; 
+    
+  
+    padding: 0 25px;
+    height: 45px;
+    min-width: 160px;
+    border-radius: 6px;
+    
+    cursor: pointer;
+    transition: filter 0.2s, transform 0.1s;
+}
+
+
+.btn-delete {
+    background-color: #d9534f; 
+}
+
+
+.btn-cancel {
+    background-color: #00a8cc; 
+}
+
+
+.btn-delete:hover, .btn-cancel:hover {
+    filter: brightness(90%);
+}
+
+.btn-delete:active, .btn-cancel:active {
+    transform: scale(0.98);
+}
+
+.login-container {
+  
+    display: flex;
+    
+    
+    justify-content: center; 
+    
+    
+    align-items: center; 
+    
+    
+    min-height: 100vh; 
+    
+    
+    background-color: #f4f4f4; 
+    
+    
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+.login-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px; 
+    text-align: center; 
+}

@@ -1,0 +1,105 @@
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4; 
+    padding: 20px;
+}
+
+
+.detail-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden; 
+    text-align: center;
+}
+
+
+.car-img-detail {
+    width: 100%;
+    height: 350px; 
+    object-fit: cover; 
+    display: block;
+}
+
+
+.car-detail-content {
+    padding: 30px;
+}
+
+.car-detail-content h2 {
+    font-family: 'Georgia', serif; 
+    font-size: 30px;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    text-align: left;
+    background: #fdfdfd;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.info-grid p {
+    margin: 0;
+    font-size: 15px;
+    color: #555;
+}
+
+.price {
+    color: #28a745; 
+    font-weight: bold;
+}
+
+
+.bio-section {
+    text-align: left;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.bio-section p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 30px 30px 30px; 
+}
+
+.btn-save, .btn-cancel, .btn-delete {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    transition: filter 0.2s;
+}
+
+/* Cores das imagens */
+.btn-save { background-color: #0099cc; }   
+.btn-cancel { background-color: #00a8cc; } 
+.btn-delete { background-color: #d9534f; } 
+
+.button-group a:hover {
+    filter: brightness(90%);
+}

@@ -1,38 +1,42 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock %}
 
 {% block content %}
+<div class="login-container">
+    <div class="login-card">
+        <h2>Criar Conta</h2>
+        
+        <form method="post">
+            {% csrf_token %}
 
-<form method="post">
+            <div class="form-group">
+                <label>Nome de Usuário</label>
+                {{ user_form.username }}
+                <span class="error-msg">{{ user_form.username.errors }}</span>
+            </div>
 
-    {% csrf_token %}
+            <div class="form-group">
+                <label>Senha</label>
+                {{ user_form.password1 }}
+                <span class="error-msg">{{ user_form.password1.errors }}</span>
+            </div>
 
-    <div>
-        {{ user_form.username.errors }}
-        <table>Nome de Usuário</table>
-        {{ user_form.username }}
+            <div class="form-group">
+                <label>Confirmação da Senha</label>
+                {{ user_form.password2 }}
+                <span class="error-msg">{{ user_form.password2.errors }}</span>
+            </div>
 
+            <input type="submit" value="Cadastrar">
+        </form>
+
+        <div class="login-footer">
+            <p>Já tem uma conta? <a href="{% url 'login' %}">Faça login</a></p>
+        </div>
     </div>
-
-       <div>
-        {{ user_form.password1.errors }}
-        <table>Senha</table>
-        {{ user_form.password1 }}
-
-    </div>
-
-       <div>
-        {{ user_form.password2.errors }}
-        <table>Confirmação da Senha</table>
-        {{ user_form.password2 }}
-
-    </div>
-
-    </div>
-
-      <input type="submit" value="Cadastrar">
-
-    </div>
-
-</form>
-
+</div>
 {% endblock %}

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from cars.models import Car
-from cars.forms import CarForm, CarModelForm
+from cars.forms import CarModelForm
 from django.views import View
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
